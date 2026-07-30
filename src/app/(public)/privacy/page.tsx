@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -108,7 +109,7 @@ export default function PrivacyPage() {
         <h2>Contact us</h2>
         <p>
           Questions about this Privacy Policy can be sent via our{" "}
-          <a href="/contact">Contact page</a>.
+          <Link href="/contact">Contact page</Link>.
         </p>
       </div>
     </div>

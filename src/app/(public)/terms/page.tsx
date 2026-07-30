@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -30,8 +31,8 @@ export default function TermsPage() {
           based on publicly available source reporting, and are reviewed by a human editor
           before publication. Each article links to and credits its original source. While
           we aim for accuracy, articles may occasionally contain errors; see our{" "}
-          <a href="/about">About page</a> for our editorial standards and{" "}
-          <a href="/contact">Contact page</a> to report corrections.
+          <Link href="/about">About page</Link> for our editorial standards and{" "}
+          <Link href="/contact">Contact page</Link> to report corrections.
         </p>
 
         <h2>Acceptable use</h2>
@@ -58,7 +59,7 @@ export default function TermsPage() {
         <h2>Third-party links and advertising</h2>
         <p>
           The Site may contain links to third-party websites and may display advertising
-          served by third-party ad networks (see our <a href="/privacy">Privacy Policy</a>{" "}
+          served by third-party ad networks (see our <Link href="/privacy">Privacy Policy</Link>{" "}
           for details). We do not control and are not responsible for the content,
           accuracy, or practices of third-party sites or advertisers.
         </p>
@@ -88,7 +89,7 @@ export default function TermsPage() {
 
         <h2>Contact</h2>
         <p>
-          Questions about these Terms can be sent via our <a href="/contact">Contact page</a>.
+          Questions about these Terms can be sent via our <Link href="/contact">Contact page</Link>.
         </p>
       </div>
     </div>

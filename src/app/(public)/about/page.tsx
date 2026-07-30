@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function AboutPage() {
           <li>Articles are reviewed before publishing; nothing goes live automatically.</li>
           <li>
             We correct errors when we find them. If you spot one, please{" "}
-            <a href="/contact">contact us</a>.
+            <Link href="/contact">contact us</Link>.
           </li>
           <li>
             We do not accept payment in exchange for favorable coverage of any product,
@@ -49,7 +50,7 @@ export default function AboutPage() {
 
         <h2>Get in touch</h2>
         <p>
-          Questions, corrections, or feedback? Visit our <a href="/contact">Contact page</a>.
+          Questions, corrections, or feedback? Visit our <Link href="/contact">Contact page</Link>.
         </p>
       </div>
     </div>
