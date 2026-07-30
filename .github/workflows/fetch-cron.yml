@@ -1,0 +1,24 @@
+name: Content Pipeline Cron
+
+# Alternative to cron-job.org: calls the deployed site's cron API route
+# on a schedule using GitHub Actions' free tier for public repos (and
+# the free minutes included for private repos). Use ONE scheduler, not
+# both, to avoid double-processing a run - pick this or cron-job.org.
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   SITE_URL     e.g. https://your-site.netlify.app
+#   CRON_SECRET  must match the CRON_SECRET env var set in Netlify
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch: {} # allows manual "Run workflow" from the Actions tab
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call content pipeline endpoint
+        run: |
+          curl --fail --show-error \
+            "${{ secrets.SITE_URL }}/api/cron/fetch?secret=${{ secrets.CRON_SECRET }}"
