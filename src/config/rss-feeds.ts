@@ -21,11 +21,14 @@ export const RSS_FEEDS: RssFeedSource[] = [
     url: "https://blog.google/technology/ai/rss/",
     defaultCategory: "research",
   },
-  {
-    name: "Anthropic News",
-    url: "https://www.anthropic.com/news/rss.xml",
-    defaultCategory: "llms",
-  },
+  // Anthropic does not currently publish an official RSS feed for
+  // anthropic.com/news. If they add one, plug the URL in here - the
+  // pipeline will pick it up with no other code changes needed.
+  // {
+  //   name: "Anthropic News",
+  //   url: "https://www.anthropic.com/news/rss.xml",
+  //   defaultCategory: "llms",
+  // },
   {
     name: "TechCrunch AI",
     url: "https://techcrunch.com/category/artificial-intelligence/feed/",

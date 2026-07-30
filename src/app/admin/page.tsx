@@ -28,7 +28,19 @@ function DashboardContent() {
   }
 
   useEffect(() => {
-    if (user) loadCounts();
+    if (!user) return;
+    let cancelled = false;
+
+    (async () => {
+      const response = await adminFetch("/api/admin/stats");
+      if (!cancelled && response.ok) {
+        setCounts(await response.json());
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [user]);
 
   async function handleFetchNow() {

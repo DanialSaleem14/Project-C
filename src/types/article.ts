@@ -59,6 +59,7 @@ export interface FetchQueueItem {
   sourceName: string;
   rawTitle: string;
   rawSummary: string;
+  urlHash: string;
   status: FetchQueueStatus;
   attempts: number;
   lastError: string | null;

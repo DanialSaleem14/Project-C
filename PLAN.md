@@ -65,6 +65,7 @@ A production-ready AI news website with a semi-automatic content pipeline, built
   sourceName: string
   rawTitle: string
   rawSummary: string
+  urlHash: string            // sha256 of source URL, so a failed item is updated in place on retry
   status: "pending" | "processing" | "failed" | "done"
   attempts: number
   lastError: string | null
