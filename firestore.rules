@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public can read only published articles. All writes go through
+    // server-side API routes using the Admin SDK, which bypasses these
+    // rules entirely - so writes here are always denied for clients.
+    match /articles/{articleId} {
+      allow read: if resource.data.status == 'published';
+      allow write: if false;
+    }
+
+    // Everything else (fetchQueue, fetchRuns, siteMeta, etc.) is
+    // server-only: no public read or write.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
