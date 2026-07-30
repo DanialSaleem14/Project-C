@@ -42,7 +42,13 @@ export interface Article {
 
 export type ArticleInput = Omit<
   Article,
-  "id" | "createdAt" | "updatedAt" | "readingTimeMinutes" | "urlHash" | "titleNormalized"
+  | "id"
+  | "createdAt"
+  | "updatedAt"
+  | "publishedAt"
+  | "readingTimeMinutes"
+  | "urlHash"
+  | "titleNormalized"
 >;
 
 export type FetchQueueStatus = "pending" | "processing" | "failed" | "done";
